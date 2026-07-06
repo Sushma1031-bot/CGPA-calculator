@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPA & CGPA Calculator</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>🎓 GPA & CGPA Calculator</h1>
+        <p>Calculate your Semester GPA, Running CGPA & Predict Future CGPA</p>
+    </header>
+
+    <!-- ================= GPA SECTION ================= -->
+
+    <section class="card">
+
+        <h2>Semester GPA Calculator</h2>
+
+        <div class="table-header">
+            <span>Subject</span>
+            <span>Credits</span>
+            <span>Grade</span>
+            <span>Action</span>
+        </div>
+
+        <div id="subjectContainer">
+
+            <!-- Default Row -->
+
+            <div class="subject-row">
+
+                <input
+                    type="text"
+                    class="subject"
+                    placeholder="Subject Name">
+
+                <input
+                    type="number"
+                    class="credit"
+                    min="1"
+                    placeholder="Credits">
+
+                <select class="grade">
+
+                    <option value="">Grade</option>
+
+                    <option value="10">O</option>
+                    <option value="9">A+</option>
+                    <option value="8">A</option>
+                    <option value="7">B+</option>
+                    <option value="6">B</option>
+                    <option value="5">C</option>
+                    <option value="4">P</option>
+                    <option value="0">F</option>
+
+                </select>
+
+                <button class="delete-btn">🗑</button>
+
+            </div>
+
+        </div>
+
+        <div class="buttons">
+
+            <button id="addSubject">
+                ➕ Add Subject
+            </button>
+
+            <button id="calculateGPA">
+                📊 Calculate GPA
+            </button>
+
+        </div>
+
+        <div class="result-box">
+
+            <h3>Your Semester GPA</h3>
+
+            <h1 id="gpaResult">
+                0.00
+            </h1>
+
+        </div>
+
+    </section>
+
+    <!-- ================= CGPA SECTION ================= -->
+
+    <section class="card">
+
+        <h2>Running CGPA Calculator</h2>
+
+        <div class="cgpa-grid">
+
+            <div>
+
+                <label>Current CGPA</label>
+
+                <input
+                    type="number"
+                    id="currentCGPA"
+                    placeholder="e.g. 8.20"
+                    step="0.01">
+
+            </div>
+
+            <div>
+
+                <label>Completed Semesters</label>
+
+                <input
+                    type="number"
+                    id="completedSemesters"
+                    placeholder="e.g. 4">
+
+            </div>
+
+            <div>
+
+                <label>Current Semester GPA</label>
+
+                <input
+                    type="number"
+                    id="currentSemesterGPA"
+                    placeholder="Auto / Manual"
+                    step="0.01">
+
+            </div>
+
+        </div>
+
+        <button id="calculateCGPA">
+            🎯 Calculate Running CGPA
+        </button>
+
+        <div class="result-box">
+
+            <h3>Updated CGPA</h3>
+
+            <h1 id="cgpaResult">
+                0.00
+            </h1>
+
+        </div>
+
+    </section>
+
+    <!-- ================= WHAT IF SECTION ================= -->
+
+    <section class="card">
+
+        <h2>🔮 What If CGPA Predictor</h2>
+
+        <p class="subtitle">
+            Predict your graduation CGPA by entering expected future GPA.
+        </p>
+
+        <div class="cgpa-grid">
+
+            <div>
+
+                <label>Current CGPA</label>
+
+                <input
+                    type="number"
+                    id="predictCurrentCGPA"
+                    placeholder="Current CGPA"
+                    step="0.01">
+
+            </div>
+
+            <div>
+
+                <label>Completed Semesters</label>
+
+                <input
+                    type="number"
+                    id="predictCompleted"
+                    placeholder="Completed Semesters">
+
+            </div>
+
+            <div>
+
+                <label>Total Semesters</label>
+
+                <input
+                    type="number"
+                    id="totalSemesters"
+                    placeholder="Example: 8">
+
+            </div>
+
+            <div>
+
+                <label>Expected GPA for Remaining Semesters</label>
+
+                <input
+                    type="number"
+                    id="futureGPA"
+                    placeholder="Example: 9.5"
+                    step="0.01">
+
+            </div>
+
+        </div>
+
+        <button id="predictCGPA">
+            🚀 Predict Graduation CGPA
+        </button>
+
+        <div class="result-box">
+
+            <h3>Expected Graduation CGPA</h3>
+
+            <h1 id="predictionResult">
+                0.00
+            </h1>
+
+        </div>
+
+    </section>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
